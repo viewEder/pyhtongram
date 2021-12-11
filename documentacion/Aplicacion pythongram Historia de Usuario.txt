@@ -1,0 +1,4 @@
+- Permite la creacion de un perfil.
+- Permite Subir fotos y exponerlas en un muro.
+- Permite la administración de mi perfil.
+- (Opcional) Reaccion a fotos de usuario.
