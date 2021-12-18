@@ -1,11 +1,76 @@
 <!-- 3. Creamos el archivo index.html con el contenido necesario: -->
-{% extends 'core/base.html' %}
-{% load static %}
-{% block titulo %}PythonGram{% endblock %}
+{% extends 'core/base.html' %} 
+{% load static %} 
+{% block titulo %}PythonGram{% endblock %} 
 {% block contenido %}
-    <section class="container">
-        <div class="row">
-            <h2 class="text-primary">Hola Estudiantes</h2>
-        </div>
-    </section>
+<section class="container">
+  <div class="row">
+    <main class="px-3 row">
+      <div class="col-8 mt-5 mb-0 h-100">
+        <h1>{{ titulo }}</h1>
+        <p class="lead">
+          {{ parrafo }}
+        </p>
+        <p class="lead">
+          <a href="#" class="btn btn-lg btn-success fw-bold">
+            {{ boton }}
+          </a>
+        </p>
+
+        <footer class="mt-auto py-3 text-white-50 ">
+          <p>
+            Cover template for
+            <a href="https://getbootstrap.com/" class="text-white">Bootstrap</a
+            >, by <a href="https://twitter.com/mdo" class="text-white">@mdo</a>.
+          </p>
+        </footer>
+
+      </div>
+      <div class="col-4">
+          <img src="{% static 'media/img/app/celulares.png' %}" class="img-fluid mb-5" alt="">
+          <button class="w-100 btn btn-lg btn-primary mt-3" type="submit">
+            Iniciar Sesion
+          </button>
+      </div>
+      <!-- <div class="col-4">
+        <main class="form-signin">
+          <form method="post">
+            <img class="mb-4" src="{% static 'media/img/app/logo.png' %}" alt="" width="72"/>
+            <h1 class="h3 mb-3 fw-normal">Ingresar</h1>
+
+            <div class="form-floating">
+              <input
+                type="email"
+                class="form-control"
+                id="floatingInput"
+                placeholder="name@example.com"
+              />
+              <label for="floatingInput" class="text-success">Usuario</label>
+            </div>
+            <div class="form-floating">
+              <input
+                type="password"
+                class="form-control"
+                id="floatingPassword"
+                placeholder="Password"
+              />
+              <label for="floatingPassword" class="text-success"
+                >Password</label
+              >
+            </div>
+
+            <div class="checkbox mb-5 mt-5"></div>
+            <button class="w-100 btn btn-lg btn-primary" type="submit">
+              Iniciar Sesion
+            </button>
+            <p class="mt-5 mb-3 text-muted">&copy; 2017–2021</p>
+            <button class="w-100 btn btn-lg btn-success" type="submit">
+              Registate
+            </button>
+          </form>
+        </main>
+      </div> -->
+    </main>
+  </div>
+</section>
 {% endblock %}
