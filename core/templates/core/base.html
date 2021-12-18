@@ -12,11 +12,13 @@
     <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
 </head>
 
-<body class="h-100 text-center text-white bg-dark">
-  <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+<body class="{{class}}">
+  <div class="d-flex w-100 h-100 p-3 mx-auto flex-column text-white bg-dark">
   <header class="mb-auto">
     <div>
-      <h3 class="float-md-start mb-0">PythonGRAM</h3>
+      <h3 class="float-md-start mb-0">
+        <a class="nav-link" href="{% url 'inicio' %}">PythonGRAM</a>
+      </h3>
       <nav class="nav nav-masthead justify-content-center float-md-end">
         <!-- Validacion de usuario logueado: -->
         {% if not request.user.is_authenticated %}
@@ -28,10 +30,10 @@
                 Usuario
               </a>
               <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#"><i class="fas fa-id-card-alt text-primary"></i>&nbsp;Perfil</a></li>
-                <li><a class="dropdown-item" href="#"><i class="fas fa-users-cog text-danger"></i>&nbsp;Administración</a></li>
+                <li><a class="dropdown-item" href="{% url 'profile' %}"><i class="fas fa-id-card-alt text-primary"></i>&nbsp;Perfil</a></li>
+                <li><a class="dropdown-item" href="/admin/"><i class="fas fa-users-cog text-danger"></i>&nbsp;Administración</a></li>
                 <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#"><i class="fas fa-door-closed text-success"></i>&nbsp;Cerrar Sesión</a></li>
+                <li><a class="dropdown-item" href="{% url 'logout' %}"><i class="fas fa-door-closed text-success"></i>&nbsp;Cerrar Sesión</a></li>
               </ul>
            </li>
         </ul>

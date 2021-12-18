@@ -32,6 +32,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    # Adicionamos una aplicacion que se encarga de la autenticacion, esta se debe colocar al inicio de la lista
+    'registration',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -134,4 +136,13 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # 4. Modificar la ruta de los archivos staticos de imagen:
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'core/static/media/')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'core/static/media/img')
+
+# Statics en todas las apps:
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
+
+
+# Modificando la redirección de Cerrar Sesión:
+LOGOUT_REDIRECT_URL = 'inicio'

@@ -28,48 +28,10 @@
       </div>
       <div class="col-4">
           <img src="{% static 'media/img/app/celulares.png' %}" class="img-fluid mb-5" alt="">
-          <button class="w-100 btn btn-lg btn-primary mt-3" type="submit">
-            Iniciar Sesion
-          </button>
+          <a class="w-100 btn btn-lg btn-primary mt-3" href="{% url 'login' %}" type="button">
+            Ingresar
+          </a>
       </div>
-      <!-- <div class="col-4">
-        <main class="form-signin">
-          <form method="post">
-            <img class="mb-4" src="{% static 'media/img/app/logo.png' %}" alt="" width="72"/>
-            <h1 class="h3 mb-3 fw-normal">Ingresar</h1>
-
-            <div class="form-floating">
-              <input
-                type="email"
-                class="form-control"
-                id="floatingInput"
-                placeholder="name@example.com"
-              />
-              <label for="floatingInput" class="text-success">Usuario</label>
-            </div>
-            <div class="form-floating">
-              <input
-                type="password"
-                class="form-control"
-                id="floatingPassword"
-                placeholder="Password"
-              />
-              <label for="floatingPassword" class="text-success"
-                >Password</label
-              >
-            </div>
-
-            <div class="checkbox mb-5 mt-5"></div>
-            <button class="w-100 btn btn-lg btn-primary" type="submit">
-              Iniciar Sesion
-            </button>
-            <p class="mt-5 mb-3 text-muted">&copy; 2017–2021</p>
-            <button class="w-100 btn btn-lg btn-success" type="submit">
-              Registate
-            </button>
-          </form>
-        </main>
-      </div> -->
     </main>
   </div>
 </section>

@@ -15,15 +15,19 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from core.urls import *
 from django.conf import settings
 
 urlpatterns = [
+    # Rutas de core:
     path('', include('core.urls')),
+    # Rutas de amdministración
     path('admin/', admin.site.urls),
+    # Rutas de registration:
+    path('accounts/', include('django.contrib.auth.urls')),     # Ruta para loggin
+    path('accounts/', include('registration.urls')),            # Rutas de otras operaciones
 ]
 
-# validamos si estamos en el mode debug:
+# Mostrar imagenes en modo DEBUG:
 if settings.DEBUG:
     from django.conf.urls.static import static
-    urlpatterns += static(settings.MEDIA_URL, document_root= settings.MEDIA_ROOT)
+    urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT) 
