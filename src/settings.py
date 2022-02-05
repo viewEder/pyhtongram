@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     # Matricular mis aplicaciones:
     # 1. Crear la aplicación core con el comando: python manage.py startapp core
     'core',
+    'muro',
+    'mensajes',
 ]
 
 MIDDLEWARE = [

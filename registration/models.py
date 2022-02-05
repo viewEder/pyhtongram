@@ -2,6 +2,7 @@ from django.db import models
 # El modelo de datos de usuario se encuentra en django:
 from django.contrib.auth.models import User
 from django.db.models.fields.related import create_many_to_many_intermediary_model
+from django.forms import ClearableFileInput
 # Importamos los seleccionables:
 from core.types.generos import Generos
 # Importamos decoradores de autenticacion:
@@ -25,7 +26,7 @@ def subirPortada(instance, filename):
 class ProfileModel(models.Model):
     # Atributos propios de la clase:
     usuario = models.OneToOneField(User,on_delete = models.CASCADE)
-    avatar = models.ImageField(upload_to = subirPerfil, null = True, blank = True)
+    avatar = models.ImageField(upload_to = subirPerfil,  null = True, blank = True)
     portada = models.ImageField(upload_to = subirPortada, null = True, blank = True)
     presentacion = models.TextField(verbose_name = "Biografia", max_length = 1000, null = True, blank = True)
     genero = models.CharField(verbose_name = "Género", choices = Generos, null= False, max_length = 40)

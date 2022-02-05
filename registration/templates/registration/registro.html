@@ -4,6 +4,24 @@
 {% block contenido %}
     {% load static %}
 
-    {{form.as_p}}
+    <div class="bg-dark p-3">
+        <section class="container p-4">
+            <div class="row text-light p-2">
+                <div class="col-8 mt-2">
+                    <form action="" class="p-2" method="post">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <hr>
+                        <button type="submit" class="btn bnt-lg btn-primary col-6 offset-md-6">
+                            Registrarme
+                        </button>
+                    </form>
+                </div>
+                <div class="col-4">
+                    <img src="{% static 'media/img/app/celulares.png' %}" class="img-fluid mb-5" alt="">
+                </div>
+            </div>
+        </section>
+    </div>
 
-    {% endblock %}
+{% endblock %}

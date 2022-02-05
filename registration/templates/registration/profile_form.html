@@ -13,18 +13,19 @@
                         <h2 class="text-primary">
                             {{user.first_name}} {{user.last_name}}
                         </h2>
-                        <!-- {% if request.user.profile.avatar %}
-                            <img class="img-fluid col-8" src="{{ request.user.profile.avatar.url }}" alt="">
+                        
+                        {% if request.user.profilemodel.avatar %}
+                            <div class="col text-center">
+                                <img src="{{ request.user.profilemodel.avatar.url }}" alt="Imagen de Perfil " class="col-12 img-fluid">
+                                <label for="">¿Borrar Imagen?</label>
+                                <input type="radio" name="avatar-clear" id="avatar-clear">
+                            </div>
+                            
                         {% else %}
-                            <img class="img-fluid col-8" src="{% static 'media/img/app/logo.png' %}" alt="">
-                        {{form.avatar}}
-                        {% endif %} -->
-                        {% if request.user.profile.avatar %}
-                        <img src="{{ request.user.profile.avatar.url }}" alt="Imagen de Perfil " class="img-fluid">
-                        <br>
-                        {% else %}
-                        <img src="{% static 'media/img/app/logo.png' %}" alt="Imagen de Perfil " class="img-fluid">
-                        {{form.avatar}}
+                            <div class="col text-center">
+                                <img src="{% static 'media/img/app/logo.png' %}" alt="Imagen de Perfil " class="img-fluid">
+                                {{ form.avatar }}
+                            </div>                   
                         {% endif %}
                     </div>
                     <article class="col-12">
@@ -70,5 +71,4 @@
             </form>           
         </div>
     </section>
-
     {% endblock %}
